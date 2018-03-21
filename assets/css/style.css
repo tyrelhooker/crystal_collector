@@ -4,10 +4,63 @@
   /* height: 100px;
   width: 100px; */
   display: inline-block; 
-  width: 25%;
+  width: 20%;
+  margin: 10px;
+  background: white;
+}
+
+.characterContainer {
+  background-image: url("../images/starsky.jpg");
 }
 
 .character {
   width: 400px;
+  background-image: url("../images/starsky.jpg");
+  margin: 10px;
 }
 
+body {
+  background-image: url("../images/starsky.jpg");
+  color: white;
+  padding: 10px;
+}
+
+.title {
+  background: #198dff;
+  margin: 5px;
+  padding: 10px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.instructions {
+  background: #f22f2f;
+  margin: 5px;
+  padding: 10px;
+}
+
+.randomNumber {
+  background: #ffcb41;
+  margin: 5px;
+  padding: 10px;
+}
+
+.winsLosses {
+  background: #ffcb41;
+  margin: 5px;
+  padding: 10px;
+}
+
+.title2 {
+  background: #198dff;
+  margin: 5px;
+  padding: 10px;
+}
+
+.userScore {
+  background: #f22f2f;
+  margin: 5px;
+  padding: 10px;
+}

@@ -31,12 +31,12 @@ $(document).ready(function() {
     if (playerCounter === randomNumber) {
       console.log("You win!");
       wins++;
-      $("#wins").append(wins);
+      $("#wins").html("<h6>Wins: " + wins + "</h6>");
       resetGame();
     } else if (playerCounter > randomNumber) {
       console.log("You lose!");
       losses++;
-      $("#losses").append(losses);
+      $("#losses").html("<h6>Losses: " + losses + "</h6>");
       resetGame();
     }
   }
@@ -44,7 +44,7 @@ $(document).ready(function() {
   function resetGame () {
     randomNumber = Math.floor( Math.random() * 102) + 19;
     playerCounter = 0;
-    $(".randomNumber").text(randomNumber);
+    $(".randomNumber").html("<h6>Total Crystals to Collect: </h6>" + "<p>" + randomNumber + "</p>");
     console.log("reset" + randomNumber);
     $(".userScore").text(playerCounter);
     console.log("reset" + playerCounter);
@@ -70,17 +70,6 @@ $(document).ready(function() {
   });
 }
 
-
-  // BEGIN GAME 
-  // randomNumber = Math.floor( Math.random() * 102) + 19;
-  // playerCounter = 0;
-  // $(".randomNumber").text(randomNumber);
-  // console.log("reset" + randomNumber);
-  // $(".userScore").text(playerCounter);
-  // console.log("reset" + playerCounter);
-  // characterNumberArr = [];
-  // generateRandomCharacterNum();
-  // console.log(characterNumberArr);
  resetGame();
   for (var i = 0; i < characterNumberArr.length; i ++) {
     var imagecharacter = $("<img>");
