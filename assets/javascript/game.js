@@ -12,8 +12,7 @@ $(document).ready(function() {
   var character = $(".character");
   var playerCounter = 0;
 
-
-
+  // Generates random non-duplicate number to assign to character click value
   function generateRandomCharacterNum(){
     var characterRandomNumber;
     for (i = 0; i < 4; i++) {
@@ -27,6 +26,7 @@ $(document).ready(function() {
     console.log(characterNumberArr);
   };
 
+  // Controls the determine the win or loss of game
   function winlossCounter () {
     if (playerCounter === randomNumber) {
       console.log("You win!");
@@ -40,37 +40,37 @@ $(document).ready(function() {
       resetGame();
     }
   }
-
+  
+  // Resets the player counter variable, resets character array, generates and sets new value for character clicks after a win or loss. 
   function resetGame () {
     randomNumber = Math.floor( Math.random() * 102) + 19;
     playerCounter = 0;
     $(".randomNumber").html("<h6>Total Crystals to Collect: </h6>" + "<p>" + randomNumber + "</p>");
-    console.log("reset" + randomNumber);
     $(".userScore").text(playerCounter);
-    console.log("reset" + playerCounter);
     characterNumberArr = [];
     generateRandomCharacterNum();
     console.log(characterNumberArr);
 
-    
-  //Get the list(or single item) of Jquery element(s)/object(s)
-  var $characters = $('.characterImage');
-  //Show me what you got
-  console.log($characters);
-  //Iterate through each of the Jquery elements/objects safely
-  $characters.each(function(index, element){
-    //Store the Jquery reference in a variable so we don't create a new Jquery instance(I.e. doing $(this) a bunch of times)
-    var $individualCharacter = $(this);
+    //Get the list(or single item) of Jquery element(s)/object(s)
+    var $characters = $('.characterImage');
     //Show me what you got
-    console.log($individualCharacter);
-    //Set the data attribute to the specific Jquery element/object you're on
-    $individualCharacter.attr("data-characterValue", characterNumberArr[index]);
-    //Proof that you set the value
-    console.log("individualCharacter" + $individualCharacter.attr("data-characterValue"));
-  });
-}
+    console.log($characters);
+    //Iterate through each of the Jquery elements/objects safely
+    $characters.each(function(index, element){
+      //Store the Jquery reference in a variable so we don't create a new Jquery instance(I.e. doing $(this) a bunch of times)
+      var $individualCharacter = $(this);
+      //Show me what you got
+      console.log($individualCharacter);
+      //Set the data attribute to the specific Jquery element/object you're on
+      $individualCharacter.attr("data-characterValue", characterNumberArr[index]);
+      //Proof that you set the value
+      console.log("individualCharacter" + $individualCharacter.attr("data-characterValue"));
+    });
+  }
 
- resetGame();
+  // GAME STARTS HERE
+  resetGame();
+  // Dynamically creates html elements an values for the clickable images
   for (var i = 0; i < characterNumberArr.length; i ++) {
     var imagecharacter = $("<img>");
     imagecharacter.addClass("characterImage");
@@ -79,15 +79,12 @@ $(document).ready(function() {
     imagecharacter.attr("data-characterValue", characterNumberArr[i]);
     character.append(imagecharacter);
   }
-  console.log($(".characterImage").attr("data-characterValue"));
 
   character.on("click", ".characterImage", function() {
     var characterValue = ($(this).attr("data-characterValue"));
     characterValue = parseInt(characterValue);
     playerCounter += characterValue;
     $(".userScore").text(playerCounter);
-    console.log (characterValue);
-    console.log (playerCounter);
     winlossCounter();
   });
 });

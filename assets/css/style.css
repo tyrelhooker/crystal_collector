@@ -1,28 +1,32 @@
 .characterImage {
   border: 1px solid orange;
-  float: left; 
   /* height: 100px;
   width: 100px; */
   display: inline-block; 
   width: 20%;
-  margin: 10px;
+  margin: 5px;
   background: white;
 }
 
 .characterContainer {
   background-image: url("../images/starsky.jpg");
+  padding: 0px;
 }
 
 .character {
   width: 400px;
   background-image: url("../images/starsky.jpg");
-  margin: 10px;
+  margin: 5px;
 }
 
 body {
   background-image: url("../images/starsky.jpg");
   color: white;
   padding: 10px;
+}
+
+.container {
+  margin: auto;
 }
 
 .title {
@@ -39,18 +43,23 @@ h3 {
   background: #f22f2f;
   margin: 5px;
   padding: 10px;
+  font-size: 16px;
 }
 
 .randomNumber {
   background: #ffcb41;
   margin: 5px;
   padding: 10px;
+  font-size: 22px;
+  color: #2f1f77;
 }
 
 .winsLosses {
   background: #ffcb41;
   margin: 5px;
   padding: 10px;
+  font-size: 22px;
+  color:#2f1f77;
 }
 
 .title2 {
@@ -63,4 +72,5 @@ h3 {
   background: #f22f2f;
   margin: 5px;
   padding: 10px;
+  font-size: 22px;
 }
